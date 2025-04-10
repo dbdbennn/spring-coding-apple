@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table>
+            <th>id</th>
+            <th>글제목</th>
+            <th>날짜</th>
+
+            <tbody th:each="board : ${boards}">
+                <td th:text="${board.id}"></td>
+                <td th:text="${board.title}"></td>
+                <td th:text="${board.date}"></td>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
