@@ -1,6 +1,7 @@
 package com.apple.shop.item;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,14 +35,17 @@ public class ItemController {
     }
 
     @GetMapping("/detail/{id}")
-    String detail(@PathVariable Long id, Model model) {
-       Optional<Item> result =  itemRepository.findById(id);
-       // 데이터 있는지 체크 !sEmpty()
-       if(result.isPresent()) {
-           model.addAttribute("item", result.get());
-           return "detail.html";
-       } else {
-           return "redirect:/list";
-       }
+    String detail(@PathVariable Long id, Model model) throws Exception{
+        throw new Exception();
+//       Optional<Item> result =  itemRepository.findById(id);
+//       // 데이터 있는지 체크 !sEmpty()
+//       if(result.isPresent()) {
+//           model.addAttribute("item", result.get());
+//           return "detail.html";
+//       } else {
+//           return "redirect:/list";
+//       }
     }
+
+
 }
