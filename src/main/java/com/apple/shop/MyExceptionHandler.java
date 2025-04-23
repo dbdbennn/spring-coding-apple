@@ -12,8 +12,8 @@ public class MyExceptionHandler {
         return ResponseEntity.status(400).body("MethodArgumentTypeMismatchException");
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handler(){
-        return ResponseEntity.status(400).body("사용자잘못");
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<String> handler(){
+//        return ResponseEntity.status(400).body("사용자잘못");
+//    }
 }
