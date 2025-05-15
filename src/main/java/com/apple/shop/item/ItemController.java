@@ -2,6 +2,7 @@ package com.apple.shop.item;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -77,7 +78,5 @@ public class ItemController {
         itemRepository.deleteById(id);
         return ResponseEntity.ok("deleted");
     }
-
-
 
 }

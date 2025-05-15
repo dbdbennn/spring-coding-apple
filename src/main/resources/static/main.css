@@ -21,6 +21,9 @@
  font-weight : 400;
  letter-spacing : -0.5px;
 }
+.nav a:visited {
+   color: black;
+}
 .nav .logo {
  font-weight : 800;
 }

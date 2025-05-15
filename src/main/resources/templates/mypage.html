@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+    <link href="/main.css" rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="~{navbar.html::navbar }"></div>
+<h1>마이페이지</h1>
+
+<!-- 사용자 정보 -->
+<p th:if="${isAuthenticated}">
+    현재 사용자: <span th:text="${username}">username</span><br>
+    권한 목록: <span th:text="${authorities}">권한</span>
+</p>
+<p th:unless="${isAuthenticated}">
+    로그인된 사용자가 아닙니다.
+</p>
+
+<!-- 일반유저 권한 확인 -->
+<span th:if="${hasUserRole}">특정권한이 있으면 보여주쇼</span>
+
+<!-- 로그인된 사용자만 보이기 -->
+<div th:if="${isAuthenticated}">
+    로그인된 사람만 보여주쇼
+</div>
+
+</body>
+</html>
