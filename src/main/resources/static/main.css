@@ -53,3 +53,18 @@ input {
   display : block;
   margin : auto;
 }
+
+.page-btn {
+    padding: 8px 12px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.active-page-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
+    cursor: default;
+}

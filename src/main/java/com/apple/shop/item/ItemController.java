@@ -1,6 +1,8 @@
 package com.apple.shop.item;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 @RequiredArgsConstructor
@@ -78,5 +82,19 @@ public class ItemController {
         itemRepository.deleteById(id);
         return ResponseEntity.ok("deleted");
     }
+
+    @GetMapping("/list/page/{pn}")
+    String getListPagination(Model model, @PathVariable Integer pn) {
+        Page<Item> result = itemRepository.findPageBy(PageRequest.of(pn - 1, 5));
+        int totalPage = result.getTotalPages();
+
+        model.addAttribute("items", result);
+        model.addAttribute("totalPage", totalPage); // 숫자만 넘김
+        model.addAttribute("currentPage", pn);
+
+        return "list.html";
+    }
+
+
 
 }

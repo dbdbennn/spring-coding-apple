@@ -22,6 +22,16 @@
         </div>
     </div>
 
+    <div style="margin-top: 20px;">
+        <div th:each="page : ${#numbers.sequence(1, totalPage)}" style="display: inline-block; margin-right: 5px;">
+            <a th:href="@{'/list/page/' + ${page}}">
+                <button th:class="${page} == ${currentPage} ? 'active-page-btn' : 'page-btn'">
+                    <span th:text="${page}"></span>
+                </button>
+            </a>
+        </div>
+    </div>
+
 <script>
     function deleteItem(url) {
        fetch(url, {
