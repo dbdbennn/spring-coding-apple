@@ -53,7 +53,7 @@ public class MemberController {
         member.setDisplayName(displayName);
         memberRepository.save(member);
 
-        return "redirect:/list";
+        return "redirect:/list/page/1";
     }
 
     @GetMapping("/login")

@@ -68,3 +68,20 @@ input {
     border: 1px solid #0056b3;
     cursor: default;
 }
+
+.comment-input-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.comment-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+
+.comment-writer {
+    color: #777;
+}
