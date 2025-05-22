@@ -26,5 +26,5 @@ public class CommentController {
         commentRepository.save(data);
         return "redirect:/detail/" + parent;
     }
-
+    //git test
 }
